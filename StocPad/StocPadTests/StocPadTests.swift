@@ -6,7 +6,7 @@
 //
 
 import Testing
-@testable import StocPad
+
 
 struct StocPadTests {
 
