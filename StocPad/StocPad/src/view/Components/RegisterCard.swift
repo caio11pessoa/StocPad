@@ -52,5 +52,10 @@ struct RegisterCard: View {
     }
 }
 #Preview {
-    RegisterCard(iconName: "Macbook", nome: "Alison", responsavel: "caio", dateExpiracao: .now)
+    VStack{
+        RegisterCard(iconName: "Macbook", nome: "Alison", responsavel: "caio", dateExpiracao: .now)
+            .padding()
+        RegisterCard(iconName: "Ipad", nome: "Alison", responsavel: "caio", dateExpiracao: .now)
+            .padding()
+    }
 }
