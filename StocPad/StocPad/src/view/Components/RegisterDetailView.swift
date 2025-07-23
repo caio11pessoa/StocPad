@@ -85,5 +85,14 @@ struct RegisterDetailView: View {
 }
 
 #Preview {
+    VStack{
+        Text("Screen")
+    }
+    .sheet(isPresented: .constant(true)) {
+        RegisterDetailView()
+            .presentationDetents([.height(320)])
+    }
+}
+#Preview {
     RegisterDetailView()
 }
