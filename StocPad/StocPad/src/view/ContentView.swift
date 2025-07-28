@@ -8,17 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var responsavel: String = ""
+    @State private var dataEmprestimo: String = ""
+    @State private var tags: String = ""
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        VStack(spacing: 16) {
+            CustomTextField(
+                placeholder: "Responsável",
+                systemImage: "person",
+                text: $responsavel
+            )
+
+            CustomTextField(
+                placeholder: "Data de Empréstimo",
+                systemImage: "calendar",
+                text: $dataEmprestimo
+            )
+
+            CustomTextField(
+                placeholder: "Adicionar Tags",
+                systemImage: "tag",
+                text: $tags
+            )
         }
         .padding()
     }
-}
-
-#Preview {
-    ContentView()
 }
