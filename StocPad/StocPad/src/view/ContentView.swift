@@ -13,25 +13,35 @@ struct ContentView: View {
     @State private var tags: String = ""
 
     var body: some View {
-        VStack(spacing: 16) {
-            CustomTextField(
-                placeholder: "Responsável",
-                systemImage: "person",
-                text: $responsavel
-            )
+        VStack {
+            Spacer()
 
-            CustomTextField(
-                placeholder: "Data de Empréstimo",
-                systemImage: "calendar",
-                text: $dataEmprestimo
-            )
+            VStack(spacing: 8) { // Espaçamento vertical entre campos reduzido
+                CustomTextField(
+                    placeholder: "Responsável",
+                    systemImage: "person",
+                    text: $responsavel
+                )
 
-            CustomTextField(
-                placeholder: "Adicionar Tags",
-                systemImage: "tag",
-                text: $tags
-            )
+                CustomTextField(
+                    placeholder: "Data de Empréstimo",
+                    systemImage: "calendar",
+                    text: $dataEmprestimo
+                )
+
+                CustomTextField(
+                    placeholder: "Adicionar Tags",
+                    systemImage: "tag",
+                    text: $tags
+                )
+            }
+            .frame(maxWidth: 400)
+            .padding(.horizontal)
+            .padding(.top, 40)
+
+            Spacer()
         }
-        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(.systemBackground))
     }
 }
